@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Berlin Sans FB', sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #004d99; 
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky; 
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    font-family: Laurasia; /* Mempertahankan font navbar */
+    letter-spacing: 2px;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+    flex-grow: 1; 
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white; 
+    font-size: 23px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ffcc00; 
+}
+
+.logout-container {
+    margin-left: auto; 
+}
+
+.logout {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.logout:hover {
+    background-color: #ff6666;
+}
+
+.logo-container {
+    margin-right: 20px; 
+}
+
+.logo {
+    width: 50px; 
+    height: auto;
+    display: block;
+}
+
+.hero-image-container {
+    position: fixed; /* Mengatur posisi video agar tetap di belakang */
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100vh; /* Mengisi tinggi viewport */
+    overflow: hidden;
+    z-index: -1; /* Video di belakang konten lainnya */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Overlay hitam transparan */
+    z-index: 1; 
+}
+
+main {
+    position: relative; /* Memastikan elemen di dalam main dapat berada di atas video */
+    z-index: 2;
+    padding: 2rem; /* Memberikan padding di dalam main */
+}
+
+.tempat-hits {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.tempat-hits h2 {
+    font-size: 40px; 
+    margin-bottom: 1rem;
+    color: white; /* Mengubah warna judul menjadi putih */
+    font-family: baby bumi;
+    letter-spacing: 1px;
+}
+
+.tempat-hits-container {
+    display: grid; 
+    grid-template-columns: repeat(6, 1fr); /* Menyesuaikan 6 kolom */
+    gap: 1rem; 
+    padding: 1rem; 
+}
+
+.tempat-hits-item {
+    background-color: white; /* Background putih untuk setiap item */
+    border-radius: 10px; 
+    padding: 0.5rem; /* Mengurangi padding di dalam item */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s; /* Transisi untuk efek hover */
+    height: 250px; /* Mengatur tinggi item agar tidak terlalu tinggi */
+    display: flex; /* Menggunakan flexbox untuk men-center gambar */
+    flex-direction: column; /* Mengatur arah flex menjadi kolom */
+    justify-content: center; /* Menjaga gambar dan teks di tengah */
+}
+
+.tempat-hits-item:hover {
+    transform: scale(1.05); /* Membesarkan item saat hover */
+}
+
+.tempat-hits-item img {
+    width: 100%; 
+    height: 150px; /* Mengatur tinggi gambar agar sama */
+    object-fit: cover; /* Memastikan gambar terpotong dengan baik */
+    border-radius: 5px; 
+    margin-bottom: 0.5rem; /* Memberikan jarak antara gambar dan judul */
+}
+
+.tempat-hits-item h3 {
+    font-size: 16px; /* Ukuran font lebih kecil untuk nama wisata */
+    margin: 0.5rem 0;
+    color: #000000; 
+    font-family: baby bumi;
+    letter-spacing: 1px;
+    white-space: nowrap; /* Menghindari teks membungkus */
+    overflow: hidden; /* Menghindari teks meluap */
+    text-overflow: ellipsis; /* Menambahkan elipsis jika teks terlalu panjang */
+}
+
+.tempat-hits-item button {
+    background-color: #004d99;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tempat-hits-item button:hover {
+    background-color: #ffcc00;
+    color: #004d99;
+}
+
+.pagination-container {
+    padding: 15px; /* Padding untuk memberikan jarak */
+    text-align: center; /* Rata tengah */
+    margin: 5px 0; /* Mengurangi jarak atas dan bawah */
+}
+
+.pagination {
+    display: inline-block; /* Menjadikan pagination sebagai blok inline untuk tengah */
+    z-index: 10; /* Pastikan lebih tinggi dari video */
+}
+
+.page-number {
+    display: inline-block;
+    padding: 8px 12px; /* Perkecil ukuran tombol */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: white; 
+    background-color: #008000; /* Warna hijau untuk background kotak */
+    border-radius: 15px; /* Sudut membulat untuk setiap nomor */
+    font-size: 16px; /* Ukuran teks lebih kecil */
+    font-weight: bold;
+    font-family: 'Berlin Sans FB', sans-serif;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Efek transisi hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Efek bayangan tombol */
+}
+
+.page-number:hover {
+    background-color: #004d00; /* Warna saat hover */
+    color: white; /* Tulisan berwarna putih saat hover */
+    transform: scale(1.05); /* Membesar sedikit saat hover */
+}
+
+.page-number.active {
+    background-color: #004d00; /* Tombol "1" berwarna hijau lebih tua */
+    color: black; /* Tulisan "1" berwarna hitam */
+}
+
+.footer {
+    background-color: #004d99; 
+    color: white; 
+    text-align: center;
+    padding: 10px 0; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin: 0; 
+}
